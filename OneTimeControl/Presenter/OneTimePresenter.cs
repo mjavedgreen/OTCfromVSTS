@@ -36,6 +36,7 @@ namespace OneTimeControl.Presenter
       string abc = oneTimeDonationView.Country;
       string def = oneTimeDonationView.Province;
       MessageBox.Show("Donation Saved");
+      ClearMainForm();
     }
 
     private void ClearMainForm()
