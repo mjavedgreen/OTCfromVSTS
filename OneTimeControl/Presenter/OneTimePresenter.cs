@@ -10,31 +10,55 @@ namespace OneTimeControl.Presenter
 {
   class OneTimePresenter
   {
-    private OneTimeDonation oneTimeDonation;
+   // private OneTimeDonation oneTimeDonation;
     private IOneTimeDonationView oneTimeDonationView;
 
     //Binging Form Events to Presenter
-    public OneTimePresenter(OneTimeDonation oneTimeDonation)
-    {
-      this.oneTimeDonation = oneTimeDonation;
-      oneTimeDonation.Save += SaveForm;
-      oneTimeDonation.Reset += ClearForm;
-    }
+    //public OneTimePresenter(OneTimeDonation oneTimeDonation)
+    //{
+    //  this.oneTimeDonation = oneTimeDonation;
+    //  oneTimeDonation.Save += SaveForm;
+    //  oneTimeDonation.Reset += ClearForm;
+    //}
 
-    public OneTimePresenter(OneTimeDonation oneTimeDonation, IOneTimeDonationView oneTimeDonationView):this(oneTimeDonation)
+    public OneTimePresenter( IOneTimeDonationView oneTimeDonationView)//:this(oneTimeDonation)
     {
       this.oneTimeDonationView = oneTimeDonationView;
+      oneTimeDonationView.Save += SaveForm;
+      oneTimeDonationView.Reset += ClearForm;
+;
     }
 
     private void ClearForm(object sender, EventArgs e)
     {
-      MessageBox.Show("Reset button clikced");
-     // string abc = oneTimeDonationView.CardNumber;
+      ClearTheForm();
+      MessageBox.Show("Form cleared");
     }
 
     private void SaveForm(object sender, EventArgs e)
     {
+     //oneTimeDonation.ca
       MessageBox.Show("Donate button clikced");
+    }
+
+    private void ClearTheForm()
+    {
+      oneTimeDonationView.CardNumber = String.Empty;
+      oneTimeDonationView.CarHolderName = String.Empty;
+      oneTimeDonationView.FirstName = String.Empty;
+      oneTimeDonationView.LastName = String.Empty;
+      oneTimeDonationView.PhoneNumber = String.Empty;
+      oneTimeDonationView.PostalCode = String.Empty;
+      oneTimeDonationView.SecurityCode = String.Empty;
+      oneTimeDonationView.DonationAmount = String.Empty;
+      oneTimeDonationView.ExpiryMonth = String.Empty; ;
+      oneTimeDonationView.ExpiryYear = String.Empty;
+      oneTimeDonationView.Extension = String.Empty;
+      oneTimeDonationView.AddressLineOne = String.Empty;
+      oneTimeDonationView.UnitSuit = String.Empty;
+      oneTimeDonationView.City = String.Empty;
+      oneTimeDonationView.PostalCode = String.Empty;
+      oneTimeDonationView.Email = String.Empty;
     }
   }
 }

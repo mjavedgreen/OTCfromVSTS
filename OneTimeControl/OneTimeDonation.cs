@@ -83,7 +83,7 @@ namespace OneTimeControl
       ddlFormAnswer.DisplayMember = "Text";
       ddlFormAnswer.ValueMember = "Value";
 
-      presenter = new OneTimePresenter(this, this);
+      presenter = new OneTimePresenter(this);
 
     }
 
