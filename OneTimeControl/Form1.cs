@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +15,6 @@ namespace OneTimeControl
     public Form1()
     {
       InitializeComponent();
-    }
-
-    private void oneTimeDonation1_Load(object sender, EventArgs e)
-    {
-
     }
   }
 }

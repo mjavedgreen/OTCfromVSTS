@@ -1,4 +1,4 @@
-namespace OneTimeControl
+﻿namespace OneTimeControl
 {
   partial class Form1
   {
@@ -33,17 +33,16 @@ namespace OneTimeControl
             // 
             // oneTimeDonation1
             // 
-            this.oneTimeDonation1.Location = new System.Drawing.Point(94, 12);
+            this.oneTimeDonation1.Location = new System.Drawing.Point(13, 3);
             this.oneTimeDonation1.Name = "oneTimeDonation1";
-            this.oneTimeDonation1.Size = new System.Drawing.Size(470, 1208);
+            this.oneTimeDonation1.Size = new System.Drawing.Size(522, 1464);
             this.oneTimeDonation1.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(676, 917);
+            this.ClientSize = new System.Drawing.Size(562, 878);
             this.Controls.Add(this.oneTimeDonation1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -56,4 +55,3 @@ namespace OneTimeControl
     private OneTimeDonation oneTimeDonation1;
   }
 }
-

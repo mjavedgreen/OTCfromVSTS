@@ -26,5 +26,15 @@ namespace OneTimeControl
     {
 
     }
+
+    private void OneTimeDonation_Load(object sender, EventArgs e)
+    {
+      radTextBox1.Focus();
+    }
+
+    private void radTextBox13_TextChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }
