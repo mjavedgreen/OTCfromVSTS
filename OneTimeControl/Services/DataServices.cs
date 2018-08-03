@@ -239,7 +239,7 @@ namespace OneTimeControl.Services
 
     public virtual IEnumerable<SelectListItem> GetWhatLedYouToDonateItems()
     {
-      yield return new SelectListItem { Text = "Select", Value = "Select" };
+      yield return new SelectListItem { Text = "Select One", Value = "Select" };
       yield return new SelectListItem { Text = "Social Media", Value = "GEA-DIGT-FBA" };
       yield return new SelectListItem { Text = "Radio", Value = "RDA-MISC-GTA" };
       yield return new SelectListItem { Text = "E-mail from SickKids", Value = "DML-MISC-IND" };

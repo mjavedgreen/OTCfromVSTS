@@ -184,7 +184,7 @@ namespace OneTimeControl
       {
         errorProviderMain.SetError(this.tbSecCodeCVV, "Security Code Incomplete");
       }
-      else { errorProviderMain.Clear(); }
+    //  else { errorProviderMain.Clear(); }
     }
 
 
