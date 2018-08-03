@@ -38,6 +38,8 @@ namespace OneTimeControl
     public string UnitSuit { get { return tbUnitSuite.Text; } set { tbUnitSuite.Text = value; } }
     public string City { get { return tbCity.Text; } set { tbCity.Text = value; } }
     public string PostalCode { get { return tbPostalCode.Text; } set { tbPostalCode.Text = value; } }
+    public string Country {  get { return ddlCountry.SelectedItem.Value.ToString(); } set { ddlCountry.Text = value; } }
+    public string Province { get { return ddlProvince.SelectedItem.Value.ToString(); } set { ddlProvince.Text = value; } }
     #endregion
     public OneTimeDonation()
     {

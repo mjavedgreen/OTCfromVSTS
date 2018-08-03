@@ -25,6 +25,10 @@ namespace OneTimeControl.IView
     string City { get; set; }
     string PostalCode { get; set; }
 
+    string Country { get; set; }
+    string Province { get; set; }
+    
+
     event EventHandler<EventArgs> Save;
     event EventHandler<EventArgs> Reset;
 

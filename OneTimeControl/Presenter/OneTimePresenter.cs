@@ -33,8 +33,8 @@ namespace OneTimeControl.Presenter
     private void SaveForm(object sender, EventArgs e)
     {
       //oneTimeDonation.ca
-      string abc = oneTimeDonationView.ExpiryMonth;
-      string def = oneTimeDonationView.ExpiryYear;
+      string abc = oneTimeDonationView.Country;
+      string def = oneTimeDonationView.Province;
       MessageBox.Show("Donation Saved");
     }
 
@@ -56,6 +56,8 @@ namespace OneTimeControl.Presenter
       oneTimeDonationView.City = String.Empty;
       oneTimeDonationView.PostalCode = String.Empty;
       oneTimeDonationView.Email = String.Empty;
+      oneTimeDonationView.Province = String.Empty;
+      oneTimeDonationView.Country = String.Empty;
     }
   }
 }
