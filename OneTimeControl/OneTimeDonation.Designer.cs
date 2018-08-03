@@ -1,4 +1,4 @@
-﻿namespace OneTimeControl
+namespace OneTimeControl
 {
   partial class OneTimeDonation
   {
@@ -86,6 +86,8 @@
             this.tbEmail = new Telerik.WinControls.UI.RadTextBox();
             this.tbPhone = new Telerik.WinControls.UI.RadTextBox();
             this.picBoxCardLogo = new System.Windows.Forms.PictureBox();
+            this.errorProviderMain = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.lblDonateionHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
@@ -136,6 +138,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDonateionHeader
@@ -154,20 +158,21 @@
             this.lblAmount.Font = new System.Drawing.Font("Verdana", 11F);
             this.lblAmount.Location = new System.Drawing.Point(12, 167);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(67, 22);
+            this.lblAmount.Size = new System.Drawing.Size(76, 22);
             this.lblAmount.TabIndex = 2;
-            this.lblAmount.Text = "Amount";
+            this.lblAmount.Text = "Amount*";
             this.lblAmount.ThemeName = "Aqua";
             // 
             // tbAmount
             // 
-            this.tbAmount.Location = new System.Drawing.Point(102, 165);
+            this.tbAmount.Location = new System.Drawing.Point(102, 167);
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.NullText = "00.00";
             this.tbAmount.ShowNullText = true;
             this.tbAmount.Size = new System.Drawing.Size(248, 24);
             this.tbAmount.TabIndex = 1;
             this.tbAmount.ThemeName = "VisualStudio2012Light";
+            this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
             // 
             // lblCreditCardHeader
             // 
@@ -197,6 +202,8 @@
             this.tbCardNumber.Size = new System.Drawing.Size(337, 24);
             this.tbCardNumber.TabIndex = 2;
             this.tbCardNumber.ThemeName = "VisualStudio2012Light";
+            this.tbCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCardNumber_KeyPress);
+            this.tbCardNumber.Leave += new System.EventHandler(this.tbCardNumber_Leave);
             // 
             // imageList1
             // 
@@ -221,6 +228,7 @@
             this.tbCardHolderName.Size = new System.Drawing.Size(337, 24);
             this.tbCardHolderName.TabIndex = 3;
             this.tbCardHolderName.ThemeName = "VisualStudio2012Light";
+            this.tbCardHolderName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCardHolderName_KeyPress);
             // 
             // lblExpiryDate
             // 
@@ -266,6 +274,8 @@
             this.tbSecCodeCVV.Size = new System.Drawing.Size(71, 24);
             this.tbSecCodeCVV.TabIndex = 6;
             this.tbSecCodeCVV.ThemeName = "VisualStudio2012Light";
+            this.tbSecCodeCVV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSecCodeCVV_KeyPress);
+            this.tbSecCodeCVV.Leave += new System.EventHandler(this.tbSecCodeCVV_Leave);
             // 
             // lblContactInfoHeader
             // 
@@ -295,6 +305,7 @@
             this.tbFirstName.Size = new System.Drawing.Size(168, 24);
             this.tbFirstName.TabIndex = 7;
             this.tbFirstName.ThemeName = "VisualStudio2012Light";
+            this.tbFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFirstName_KeyPress);
             // 
             // lblLastName
             // 
@@ -335,6 +346,7 @@
             this.tbExtensionNumber.Size = new System.Drawing.Size(81, 24);
             this.tbExtensionNumber.TabIndex = 11;
             this.tbExtensionNumber.ThemeName = "VisualStudio2012Light";
+            this.tbExtensionNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbExtensionNumber_KeyPress);
             // 
             // lblBillingInformationHeader
             // 
@@ -396,9 +408,9 @@
             this.lblCity.Font = new System.Drawing.Font("Verdana", 9F);
             this.lblCity.Location = new System.Drawing.Point(13, 831);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(31, 18);
+            this.lblCity.Size = new System.Drawing.Size(39, 18);
             this.lblCity.TabIndex = 15;
-            this.lblCity.Text = "City";
+            this.lblCity.Text = "City*";
             this.lblCity.ThemeName = "Aqua";
             // 
             // tbPostalCode
@@ -443,9 +455,9 @@
             this.lblProvince.Font = new System.Drawing.Font("Verdana", 9F);
             this.lblProvince.Location = new System.Drawing.Point(270, 891);
             this.lblProvince.Name = "lblProvince";
-            this.lblProvince.Size = new System.Drawing.Size(59, 18);
+            this.lblProvince.Size = new System.Drawing.Size(67, 18);
             this.lblProvince.TabIndex = 19;
-            this.lblProvince.Text = "Province";
+            this.lblProvince.Text = "Province*";
             this.lblProvince.ThemeName = "Aqua";
             // 
             // ddlProvince
@@ -577,6 +589,7 @@
             this.tbLastName.Size = new System.Drawing.Size(168, 24);
             this.tbLastName.TabIndex = 8;
             this.tbLastName.ThemeName = "VisualStudio2012Light";
+            this.tbLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLastName_KeyPress);
             // 
             // tbEmail
             // 
@@ -585,22 +598,33 @@
             this.tbEmail.Size = new System.Drawing.Size(168, 24);
             this.tbEmail.TabIndex = 9;
             this.tbEmail.ThemeName = "VisualStudio2012Light";
+            this.tbEmail.Leave += new System.EventHandler(this.tbEmail_Leave);
             // 
             // tbPhone
             // 
             this.tbPhone.Location = new System.Drawing.Point(227, 649);
+            this.tbPhone.MaxLength = 10;
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(168, 24);
             this.tbPhone.TabIndex = 10;
             this.tbPhone.ThemeName = "VisualStudio2012Light";
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // picBoxCardLogo
             // 
             this.picBoxCardLogo.Location = new System.Drawing.Point(372, 271);
             this.picBoxCardLogo.Name = "picBoxCardLogo";
-            this.picBoxCardLogo.Size = new System.Drawing.Size(72, 33);
+            this.picBoxCardLogo.Size = new System.Drawing.Size(72, 43);
             this.picBoxCardLogo.TabIndex = 31;
             this.picBoxCardLogo.TabStop = false;
+            // 
+            // errorProviderMain
+            // 
+            this.errorProviderMain.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // OneTimeDonation
             // 
@@ -709,6 +733,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -771,5 +797,7 @@
     private Telerik.WinControls.UI.RadTextBox tbEmail;
     private Telerik.WinControls.UI.RadTextBox tbPhone;
     private System.Windows.Forms.PictureBox picBoxCardLogo;
+    private System.Windows.Forms.ErrorProvider errorProviderMain;
+    private System.Windows.Forms.ErrorProvider errorProvider1;
   }
 }
