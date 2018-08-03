@@ -14,12 +14,7 @@ namespace OneTimeControl.Presenter
     private IOneTimeDonationView oneTimeDonationView;
 
     //Binging Form Events to Presenter
-    //public OneTimePresenter(OneTimeDonation oneTimeDonation)
-    //{
-    //  this.oneTimeDonation = oneTimeDonation;
-    //  oneTimeDonation.Save += SaveForm;
-    //  oneTimeDonation.Reset += ClearForm;
-    //}
+    
 
     public OneTimePresenter( IOneTimeDonationView oneTimeDonationView)//:this(oneTimeDonation)
     {
@@ -37,8 +32,10 @@ namespace OneTimeControl.Presenter
 
     private void SaveForm(object sender, EventArgs e)
     {
-     //oneTimeDonation.ca
-      MessageBox.Show("Donate button clikced");
+      //oneTimeDonation.ca
+      string abc = oneTimeDonationView.ExpiryMonth;
+      string def = oneTimeDonationView.ExpiryYear;
+      MessageBox.Show("Donation Saved");
     }
 
     private void ClearTheForm()
@@ -51,8 +48,8 @@ namespace OneTimeControl.Presenter
       oneTimeDonationView.PostalCode = String.Empty;
       oneTimeDonationView.SecurityCode = String.Empty;
       oneTimeDonationView.DonationAmount = String.Empty;
-      oneTimeDonationView.ExpiryMonth = String.Empty; ;
-      oneTimeDonationView.ExpiryYear = String.Empty;
+      oneTimeDonationView.ExpiryMonth = "MM";
+      oneTimeDonationView.ExpiryYear = "YYYY"; //String.Empty;
       oneTimeDonationView.Extension = String.Empty;
       oneTimeDonationView.AddressLineOne = String.Empty;
       oneTimeDonationView.UnitSuit = String.Empty;

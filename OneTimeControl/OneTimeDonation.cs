@@ -22,12 +22,12 @@ namespace OneTimeControl
     private OneTimePresenter presenter;
     
 
-    #region Binding View to Form
+    #region Binding IView to Form
     public string DonationAmount { get { return tbAmount.Text.Trim(); } set { tbAmount.Text = value; } }
     public string CardNumber { get { return tbCardNumber.Text.Trim(); } set { tbCardNumber.Text = value; } }
     public string CarHolderName { get { return tbCardHolderName.Text; } set { tbCardHolderName.Text = value; } }
-    public string ExpiryMonth { get; set; }
-    public string ExpiryYear { get; set; }
+    public string ExpiryMonth { get { return ddlMM.SelectedItem.Text.ToString(); } set { ddlMM.Text = value; }  }
+    public string ExpiryYear { get { return ddlYYYY.SelectedIndex.ToString(); } set { ddlYYYY.Text = value; } } 
     public string SecurityCode { get { return tbSecCodeCVV.Text.Trim(); }  set { tbSecCodeCVV.Text = value; }  }
     public string FirstName { get { return tbFirstName.Text; } set { tbFirstName.Text = value; } }
     public string LastName { get { return tbLastName.Text; } set { tbLastName.Text = value; } }
@@ -213,7 +213,7 @@ namespace OneTimeControl
     }
 
    
-    #endregion
+   
 
     private void btnDonate_Click(object sender, EventArgs e)
     {
@@ -265,7 +265,11 @@ namespace OneTimeControl
 
     private void tbAmount_Leave(object sender, EventArgs e)
     {
-      CheckIfEmpty(tbAmount, "Amount");
+      //CheckIfEmpty(tbAmount, "Amount");
     }
+
+    #endregion
+
+  
   }
 }

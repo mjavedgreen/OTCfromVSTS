@@ -171,6 +171,7 @@ namespace OneTimeControl
             this.tbAmount.ThemeName = "VisualStudio2012Light";
             this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
             this.tbAmount.Leave += new System.EventHandler(this.tbAmount_Leave);
+            
             // 
             // lblCreditCardHeader
             // 
@@ -614,9 +615,9 @@ namespace OneTimeControl
             this.ddlMM.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlMM.Location = new System.Drawing.Point(12, 388);
             this.ddlMM.Name = "ddlMM";
+            this.ddlMM.NullText = "MM";
             this.ddlMM.Size = new System.Drawing.Size(88, 24);
             this.ddlMM.TabIndex = 4;
-            this.ddlMM.Text = "radDropDownList2";
             this.ddlMM.ThemeName = "VisualStudio2012Light";
             // 
             // ddlProvince
