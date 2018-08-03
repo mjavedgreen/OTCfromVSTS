@@ -45,7 +45,6 @@ namespace OneTimeControl
             this.lblCardHolderName = new Telerik.WinControls.UI.RadLabel();
             this.tbCardHolderName = new Telerik.WinControls.UI.RadTextBox();
             this.lblExpiryDate = new Telerik.WinControls.UI.RadLabel();
-            this.ddlMM = new Telerik.WinControls.UI.RadDropDownButton();
             this.ddlFormAnswer = new Telerik.WinControls.UI.RadDropDownList();
             this.lblSecCodeCVV = new Telerik.WinControls.UI.RadLabel();
             this.tbSecCodeCVV = new Telerik.WinControls.UI.RadTextBox();
@@ -66,9 +65,7 @@ namespace OneTimeControl
             this.tbPostalCode = new Telerik.WinControls.UI.RadTextBox();
             this.lblPostalCode = new Telerik.WinControls.UI.RadLabel();
             this.lblCountry = new Telerik.WinControls.UI.RadLabel();
-            this.ddlCountry = new Telerik.WinControls.UI.RadDropDownButton();
             this.lblProvince = new Telerik.WinControls.UI.RadLabel();
-            this.ddlProvince = new Telerik.WinControls.UI.RadDropDownButton();
             this.lblDonationInformationHeader = new Telerik.WinControls.UI.RadLabel();
             this.lblFormQuestion = new Telerik.WinControls.UI.RadLabel();
             this.lblComments = new Telerik.WinControls.UI.RadLabel();
@@ -88,6 +85,9 @@ namespace OneTimeControl
             this.picBoxCardLogo = new System.Windows.Forms.PictureBox();
             this.errorProviderMain = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ddlCountry = new Telerik.WinControls.UI.RadDropDownList();
+            this.ddlMM = new Telerik.WinControls.UI.RadDropDownList();
+            this.ddlProvince = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.lblDonateionHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
@@ -97,7 +97,6 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.lblCardHolderName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCardHolderName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblExpiryDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlFormAnswer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblSecCodeCVV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSecCodeCVV)).BeginInit();
@@ -118,9 +117,7 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.tbPostalCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblPostalCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCountry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProvince)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblDonationInformationHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFormQuestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblComments)).BeginInit();
@@ -140,6 +137,9 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDonateionHeader
@@ -239,14 +239,6 @@ namespace OneTimeControl
             this.lblExpiryDate.TabIndex = 5;
             this.lblExpiryDate.Text = "Expiry Date*";
             this.lblExpiryDate.ThemeName = "Aqua";
-            // 
-            // ddlMM
-            // 
-            this.ddlMM.Location = new System.Drawing.Point(13, 388);
-            this.ddlMM.Name = "ddlMM";
-            this.ddlMM.Size = new System.Drawing.Size(87, 24);
-            this.ddlMM.TabIndex = 4;
-            this.ddlMM.Text = "radDropDownButton1";
             // 
             // ddlFormAnswer
             // 
@@ -442,14 +434,6 @@ namespace OneTimeControl
             this.lblCountry.Text = "Country*";
             this.lblCountry.ThemeName = "Aqua";
             // 
-            // ddlCountry
-            // 
-            this.ddlCountry.Location = new System.Drawing.Point(15, 915);
-            this.ddlCountry.Name = "ddlCountry";
-            this.ddlCountry.Size = new System.Drawing.Size(205, 24);
-            this.ddlCountry.TabIndex = 16;
-            this.ddlCountry.Text = "radDropDownButton2";
-            // 
             // lblProvince
             // 
             this.lblProvince.Font = new System.Drawing.Font("Verdana", 9F);
@@ -459,14 +443,6 @@ namespace OneTimeControl
             this.lblProvince.TabIndex = 19;
             this.lblProvince.Text = "Province*";
             this.lblProvince.ThemeName = "Aqua";
-            // 
-            // ddlProvince
-            // 
-            this.ddlProvince.Location = new System.Drawing.Point(270, 915);
-            this.ddlProvince.Name = "ddlProvince";
-            this.ddlProvince.Size = new System.Drawing.Size(206, 24);
-            this.ddlProvince.TabIndex = 17;
-            this.ddlProvince.Text = "radDropDownButton3";
             // 
             // lblDonationInformationHeader
             // 
@@ -626,10 +602,40 @@ namespace OneTimeControl
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // ddlCountry
+            // 
+            this.ddlCountry.Location = new System.Drawing.Point(15, 915);
+            this.ddlCountry.Name = "ddlCountry";
+            this.ddlCountry.Size = new System.Drawing.Size(205, 24);
+            this.ddlCountry.TabIndex = 16;
+            this.ddlCountry.Text = "radDropDownList2";
+            this.ddlCountry.ThemeName = "VisualStudio2012Light";
+            // 
+            // ddlMM
+            // 
+            this.ddlMM.Location = new System.Drawing.Point(12, 388);
+            this.ddlMM.Name = "ddlMM";
+            this.ddlMM.Size = new System.Drawing.Size(88, 24);
+            this.ddlMM.TabIndex = 4;
+            this.ddlMM.Text = "radDropDownList2";
+            this.ddlMM.ThemeName = "VisualStudio2012Light";
+            // 
+            // ddlProvince
+            // 
+            this.ddlProvince.Location = new System.Drawing.Point(271, 915);
+            this.ddlProvince.Name = "ddlProvince";
+            this.ddlProvince.Size = new System.Drawing.Size(205, 24);
+            this.ddlProvince.TabIndex = 17;
+            this.ddlProvince.Text = "radDropDownList2";
+            this.ddlProvince.ThemeName = "VisualStudio2012Light";
+            // 
             // OneTimeDonation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ddlProvince);
+            this.Controls.Add(this.ddlMM);
+            this.Controls.Add(this.ddlCountry);
             this.Controls.Add(this.picBoxCardLogo);
             this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.tbEmail);
@@ -648,9 +654,7 @@ namespace OneTimeControl
             this.Controls.Add(this.lblComments);
             this.Controls.Add(this.lblFormQuestion);
             this.Controls.Add(this.lblDonationInformationHeader);
-            this.Controls.Add(this.ddlProvince);
             this.Controls.Add(this.lblProvince);
-            this.Controls.Add(this.ddlCountry);
             this.Controls.Add(this.lblCountry);
             this.Controls.Add(this.tbPostalCode);
             this.Controls.Add(this.lblPostalCode);
@@ -671,7 +675,6 @@ namespace OneTimeControl
             this.Controls.Add(this.tbSecCodeCVV);
             this.Controls.Add(this.lblSecCodeCVV);
             this.Controls.Add(this.ddlFormAnswer);
-            this.Controls.Add(this.ddlMM);
             this.Controls.Add(this.lblExpiryDate);
             this.Controls.Add(this.lblCardHolderName);
             this.Controls.Add(this.tbCardNumber);
@@ -692,7 +695,6 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.lblCardHolderName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCardHolderName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblExpiryDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlFormAnswer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblSecCodeCVV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSecCodeCVV)).EndInit();
@@ -713,9 +715,7 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.tbPostalCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblPostalCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCountry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProvince)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblDonationInformationHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFormQuestion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblComments)).EndInit();
@@ -735,6 +735,9 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,7 +759,6 @@ namespace OneTimeControl
     private Telerik.WinControls.UI.RadLabel lblCardHolderName;
     private Telerik.WinControls.UI.RadTextBox tbCardHolderName;
     private Telerik.WinControls.UI.RadLabel lblExpiryDate;
-    private Telerik.WinControls.UI.RadDropDownButton ddlMM;
     private Telerik.WinControls.UI.RadDropDownList ddlFormAnswer;
     private Telerik.WinControls.UI.RadLabel lblSecCodeCVV;
     private Telerik.WinControls.UI.RadTextBox tbSecCodeCVV;
@@ -777,9 +779,7 @@ namespace OneTimeControl
     private Telerik.WinControls.UI.RadTextBox tbPostalCode;
     private Telerik.WinControls.UI.RadLabel lblPostalCode;
     private Telerik.WinControls.UI.RadLabel lblCountry;
-    private Telerik.WinControls.UI.RadDropDownButton ddlCountry;
     private Telerik.WinControls.UI.RadLabel lblProvince;
-    private Telerik.WinControls.UI.RadDropDownButton ddlProvince;
     private Telerik.WinControls.UI.RadLabel lblDonationInformationHeader;
     private Telerik.WinControls.UI.RadLabel lblFormQuestion;
     private Telerik.WinControls.UI.RadLabel lblComments;
@@ -799,5 +799,8 @@ namespace OneTimeControl
     private System.Windows.Forms.PictureBox picBoxCardLogo;
     private System.Windows.Forms.ErrorProvider errorProviderMain;
     private System.Windows.Forms.ErrorProvider errorProvider1;
+    private Telerik.WinControls.UI.RadDropDownList ddlProvince;
+    private Telerik.WinControls.UI.RadDropDownList ddlMM;
+    private Telerik.WinControls.UI.RadDropDownList ddlCountry;
   }
 }

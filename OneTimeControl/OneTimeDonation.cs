@@ -8,16 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using OneTimeControl.IView;
+using OneTimeControl.Services;
 
 namespace OneTimeControl
 {
-  public partial class OneTimeDonation : UserControl
+  public partial class OneTimeDonation : UserControl, IOneTimeDonationView
   {
+
+    private IDataService dataService;
+    
+
+    #region Binding View to Form
+    public string DonationAmount { get { return tbAmount.Text.Trim(); } set { tbAmount.Text = value; } }
+    public string CardNumber { get { return tbCardNumber.Text.Trim(); } set { tbCardNumber.Text = value; } }
+    public string CarHolderName { get { return tbCardHolderName.Text; } set { tbCardHolderName.Text = value; } }
+    public string ExpiryMonth { get; set; }
+    public string ExpiryYear { get; set; }
+    public string SecurityCode { get { return tbSecCodeCVV.Text.Trim(); }  set { tbSecCodeCVV.Text = value; }  }
+    public string FirstName { get { return tbFirstName.Text; } set { tbFirstName.Text = value; } }
+    public string LastName { get { return tbLastName.Text; } set { tbLastName.Text = value; } }
+    public string Email { get { return tbEmail.Text; } set { tbEmail.Text = value; } }
+    public string PhoneNumber { get { return tbPhone.Text; } set { tbPhone.Text = value; } }
+    public string Extension { get { return tbExtensionNumber.Text; } set { tbExtensionNumber.Text = value; } }
+    public string AddressLineOne { get { return tbAddress.Text; } set { tbAddress.Text = value; } }
+    public string UnitSuit { get { return tbUnitSuite.Text; } set { tbUnitSuite.Text = value; } }
+    public string City { get { return tbCity.Text; } set { tbCity.Text = value; } }
+    public string PostalCode { get { return tbPostalCode.Text; } set { tbPostalCode.Text = value; } }
+    #endregion
     public OneTimeDonation()
     {
       InitializeComponent();
     }
 
+    public event EventHandler<EventArgs> Save;
+    public event EventHandler<EventArgs> Reset;
+
+    #region Validation of Controls
     private void pictureBox1_Click(object sender, EventArgs e)
     {
 
@@ -31,6 +58,27 @@ namespace OneTimeControl
     private void OneTimeDonation_Load(object sender, EventArgs e)
     {
       tbAmount.Focus();
+      dataService = new DataServices(this);
+      ddlMM.DataSource = dataService.GetExpiryMonths();
+      ddlMM.DisplayMember = "Text";
+      ddlMM.ValueMember = "Value";
+
+      ddlYYYY.DataSource = dataService.GetExpiryYears();
+      ddlYYYY.DisplayMember = "Text";
+      ddlYYYY.ValueMember = "Value";
+
+      ddlCountry.DataSource = dataService.GetCountries();
+      ddlCountry.DisplayMember = "Text";
+      ddlCountry.ValueMember = "Value";
+
+      ddlProvince.DataSource = dataService.GetCanadianProvinces();
+      ddlProvince.DisplayMember = "Text";
+      ddlProvince.ValueMember = "Value";
+
+      ddlFormAnswer.DataSource = dataService.GetWhatLedYouToDonateItems();
+      ddlFormAnswer.DisplayMember = "Text";
+      ddlFormAnswer.ValueMember = "Value";
+
     }
 
     private void radTextBox13_TextChanged(object sender, EventArgs e)
@@ -162,6 +210,6 @@ namespace OneTimeControl
     {
       e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
     }
-
+    #endregion
   }
 }

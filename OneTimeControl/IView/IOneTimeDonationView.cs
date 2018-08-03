@@ -13,7 +13,6 @@ namespace OneTimeControl.IView
     string CardNumber { get; set; }
     string CarHolderName { get; set; }
     string ExpiryMonth { get; set; }
-    List<String> ExM { get; set; }
     string ExpiryYear { get; set; }
     string SecurityCode { get; set; }
     string FirstName { get; set; }
@@ -25,6 +24,9 @@ namespace OneTimeControl.IView
     string UnitSuit { get; set; }
     string City { get; set; }
     string PostalCode { get; set; }
+
+    event EventHandler<EventArgs> Save;
+    event EventHandler<EventArgs> Reset;
 
   }
 }

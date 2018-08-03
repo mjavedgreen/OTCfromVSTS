@@ -7,6 +7,13 @@ namespace OneTimeControl.Services
 {
   class DataServices : IDataService
   {
+    private OneTimeDonation oneTimeDonation;
+
+    public DataServices(OneTimeDonation oneTimeDonation)
+    {
+      this.oneTimeDonation = oneTimeDonation;
+    }
+
     public virtual IEnumerable<SelectListItem> GetCountries()
     {
 
