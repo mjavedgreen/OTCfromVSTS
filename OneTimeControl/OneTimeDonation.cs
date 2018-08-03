@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using OneTimeControl.IView;
 using OneTimeControl.Services;
+using OneTimeControl.Presenter;
+using Telerik.WinControls.UI;
 
 namespace OneTimeControl
 {
@@ -17,6 +19,7 @@ namespace OneTimeControl
   {
 
     private IDataService dataService;
+    private OneTimePresenter presenter;
     
 
     #region Binding View to Form
@@ -39,6 +42,7 @@ namespace OneTimeControl
     public OneTimeDonation()
     {
       InitializeComponent();
+      presenter = new OneTimePresenter(this);
     }
 
     public event EventHandler<EventArgs> Save;
@@ -79,14 +83,11 @@ namespace OneTimeControl
       ddlFormAnswer.DisplayMember = "Text";
       ddlFormAnswer.ValueMember = "Value";
 
-    }
 
-    private void radTextBox13_TextChanged(object sender, EventArgs e)
-    {
 
     }
 
-
+   
     private void tbCardNumber_KeyPress(object sender, KeyPressEventArgs e)
     {
 
@@ -210,6 +211,61 @@ namespace OneTimeControl
     {
       e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
     }
+
+   
     #endregion
+
+    private void btnDonate_Click(object sender, EventArgs e)
+    {
+      Save(sender, e);
+    }
+
+    private void btnReset_Click(object sender, EventArgs e)
+    {
+      Reset(sender, e);
+    }
+
+    private void tbFirstName_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbFirstName, "First Name");
+    }
+
+    private void CheckIfEmpty(RadTextBox textBox, string controlName)
+    {
+      if (textBox.Text.Length.ToString() == "0")
+      {
+        errorProviderMain.SetError(textBox, controlName + " cannot be empty");
+      }
+    }
+
+    private void tbLastName_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbLastName, "Last Name");
+    }
+
+    private void tbCardHolderName_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbCardHolderName, "Card Holder Name");
+    }
+
+    private void tbAddress_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbAddress, "Address");
+    }
+
+    private void tbCity_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbCity, "City");
+    }
+
+    private void tbPostalCode_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbPostalCode, "Postal Code");
+    }
+
+    private void tbAmount_Leave(object sender, EventArgs e)
+    {
+      CheckIfEmpty(tbAmount, "Amount");
+    }
   }
 }

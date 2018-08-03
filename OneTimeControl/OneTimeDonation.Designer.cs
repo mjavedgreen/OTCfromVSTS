@@ -173,6 +173,7 @@ namespace OneTimeControl
             this.tbAmount.TabIndex = 1;
             this.tbAmount.ThemeName = "VisualStudio2012Light";
             this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
+            this.tbAmount.Leave += new System.EventHandler(this.tbAmount_Leave);
             // 
             // lblCreditCardHeader
             // 
@@ -229,6 +230,7 @@ namespace OneTimeControl
             this.tbCardHolderName.TabIndex = 3;
             this.tbCardHolderName.ThemeName = "VisualStudio2012Light";
             this.tbCardHolderName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCardHolderName_KeyPress);
+            this.tbCardHolderName.Leave += new System.EventHandler(this.tbCardHolderName_Leave);
             // 
             // lblExpiryDate
             // 
@@ -298,6 +300,7 @@ namespace OneTimeControl
             this.tbFirstName.TabIndex = 7;
             this.tbFirstName.ThemeName = "VisualStudio2012Light";
             this.tbFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFirstName_KeyPress);
+            this.tbFirstName.Leave += new System.EventHandler(this.tbFirstName_Leave);
             // 
             // lblLastName
             // 
@@ -358,6 +361,7 @@ namespace OneTimeControl
             this.tbAddress.Size = new System.Drawing.Size(356, 24);
             this.tbAddress.TabIndex = 12;
             this.tbAddress.ThemeName = "VisualStudio2012Light";
+            this.tbAddress.Leave += new System.EventHandler(this.tbAddress_Leave);
             // 
             // lblAddress
             // 
@@ -394,6 +398,7 @@ namespace OneTimeControl
             this.tbCity.Size = new System.Drawing.Size(207, 24);
             this.tbCity.TabIndex = 14;
             this.tbCity.ThemeName = "VisualStudio2012Light";
+            this.tbCity.Leave += new System.EventHandler(this.tbCity_Leave);
             // 
             // lblCity
             // 
@@ -412,7 +417,7 @@ namespace OneTimeControl
             this.tbPostalCode.Size = new System.Drawing.Size(82, 24);
             this.tbPostalCode.TabIndex = 15;
             this.tbPostalCode.ThemeName = "VisualStudio2012Light";
-            this.tbPostalCode.TextChanged += new System.EventHandler(this.radTextBox13_TextChanged);
+            this.tbPostalCode.Leave += new System.EventHandler(this.tbPostalCode_Leave);
             // 
             // lblPostalCode
             // 
@@ -514,6 +519,7 @@ namespace OneTimeControl
             this.btnDonate.Size = new System.Drawing.Size(110, 24);
             this.btnDonate.TabIndex = 23;
             this.btnDonate.Text = "Donate";
+            this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
             // 
             // radLabel23
             // 
@@ -557,6 +563,7 @@ namespace OneTimeControl
             this.btnReset.Size = new System.Drawing.Size(110, 24);
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // tbLastName
             // 
@@ -566,6 +573,7 @@ namespace OneTimeControl
             this.tbLastName.TabIndex = 8;
             this.tbLastName.ThemeName = "VisualStudio2012Light";
             this.tbLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLastName_KeyPress);
+            this.tbLastName.Leave += new System.EventHandler(this.tbLastName_Leave);
             // 
             // tbEmail
             // 
