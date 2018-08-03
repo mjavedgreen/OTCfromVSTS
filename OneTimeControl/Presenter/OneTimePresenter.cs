@@ -26,7 +26,7 @@ namespace OneTimeControl.Presenter
 
     private void ClearForm(object sender, EventArgs e)
     {
-      ClearTheForm();
+      ClearMainForm();
       MessageBox.Show("Form cleared");
     }
 
@@ -38,7 +38,7 @@ namespace OneTimeControl.Presenter
       MessageBox.Show("Donation Saved");
     }
 
-    private void ClearTheForm()
+    private void ClearMainForm()
     {
       oneTimeDonationView.CardNumber = String.Empty;
       oneTimeDonationView.CarHolderName = String.Empty;
@@ -58,6 +58,7 @@ namespace OneTimeControl.Presenter
       oneTimeDonationView.Email = String.Empty;
       oneTimeDonationView.Province = String.Empty;
       oneTimeDonationView.Country = String.Empty;
+      oneTimeDonationView.Comments = String.Empty;
     }
   }
 }

@@ -40,6 +40,9 @@ namespace OneTimeControl
     public string PostalCode { get { return tbPostalCode.Text; } set { tbPostalCode.Text = value; } }
     public string Country {  get { return ddlCountry.SelectedItem.Value.ToString(); } set { ddlCountry.Text = value; } }
     public string Province { get { return ddlProvince.SelectedItem.Value.ToString(); } set { ddlProvince.Text = value; } }
+
+    public string DonationReason { get { return ddlFormAnswer.SelectedIndex.ToString(); } set { } }
+    public string Comments { get { return tbComments.Text.ToString(); } set { tbComments.Text = value; } }
     #endregion
     public OneTimeDonation()
     {

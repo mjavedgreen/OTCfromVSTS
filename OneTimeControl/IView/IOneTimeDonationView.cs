@@ -27,6 +27,8 @@ namespace OneTimeControl.IView
 
     string Country { get; set; }
     string Province { get; set; }
+    string DonationReason { get; set; }
+    string Comments { get; set; }
     
 
     event EventHandler<EventArgs> Save;
