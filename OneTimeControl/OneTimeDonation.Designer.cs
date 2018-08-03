@@ -171,7 +171,6 @@ namespace OneTimeControl
             this.tbAmount.ThemeName = "VisualStudio2012Light";
             this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
             this.tbAmount.Leave += new System.EventHandler(this.tbAmount_Leave);
-            
             // 
             // lblCreditCardHeader
             // 
@@ -278,7 +277,7 @@ namespace OneTimeControl
             // lblFirstName
             // 
             this.lblFirstName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblFirstName.Location = new System.Drawing.Point(12, 554);
+            this.lblFirstName.Location = new System.Drawing.Point(15, 554);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(82, 18);
             this.lblFirstName.TabIndex = 4;
@@ -287,7 +286,7 @@ namespace OneTimeControl
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(12, 578);
+            this.tbFirstName.Location = new System.Drawing.Point(15, 578);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(168, 24);
             this.tbFirstName.TabIndex = 7;
@@ -298,7 +297,7 @@ namespace OneTimeControl
             // lblLastName
             // 
             this.lblLastName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblLastName.Location = new System.Drawing.Point(227, 554);
+            this.lblLastName.Location = new System.Drawing.Point(231, 554);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(80, 18);
             this.lblLastName.TabIndex = 6;
