@@ -235,9 +235,9 @@ namespace OneTimeControl
             // 
             // ddlFormAnswer
             // 
+            this.ddlFormAnswer.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlFormAnswer.Location = new System.Drawing.Point(41, 1084);
             this.ddlFormAnswer.Name = "ddlFormAnswer";
-            this.ddlFormAnswer.ReadOnly = true;
             this.ddlFormAnswer.Size = new System.Drawing.Size(435, 24);
             this.ddlFormAnswer.TabIndex = 18;
             this.ddlFormAnswer.Text = "radDropDownList1";
@@ -531,9 +531,9 @@ namespace OneTimeControl
             // 
             // ddlYYYY
             // 
+            this.ddlYYYY.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlYYYY.Location = new System.Drawing.Point(111, 388);
             this.ddlYYYY.Name = "ddlYYYY";
-            this.ddlYYYY.ReadOnly = true;
             this.ddlYYYY.Size = new System.Drawing.Size(124, 24);
             this.ddlYYYY.TabIndex = 5;
             this.ddlYYYY.Text = "radDropDownList2";
@@ -601,9 +601,9 @@ namespace OneTimeControl
             // 
             // ddlCountry
             // 
+            this.ddlCountry.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlCountry.Location = new System.Drawing.Point(15, 915);
             this.ddlCountry.Name = "ddlCountry";
-            this.ddlCountry.ReadOnly = true;
             this.ddlCountry.Size = new System.Drawing.Size(205, 24);
             this.ddlCountry.TabIndex = 16;
             this.ddlCountry.Text = "radDropDownList2";
@@ -611,9 +611,9 @@ namespace OneTimeControl
             // 
             // ddlMM
             // 
+            this.ddlMM.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlMM.Location = new System.Drawing.Point(12, 388);
             this.ddlMM.Name = "ddlMM";
-            this.ddlMM.ReadOnly = true;
             this.ddlMM.Size = new System.Drawing.Size(88, 24);
             this.ddlMM.TabIndex = 4;
             this.ddlMM.Text = "radDropDownList2";

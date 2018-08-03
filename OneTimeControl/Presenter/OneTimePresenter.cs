@@ -17,8 +17,8 @@ namespace OneTimeControl.Presenter
     public OneTimePresenter(OneTimeDonation oneTimeDonation)
     {
       this.oneTimeDonation = oneTimeDonation;
-      oneTimeDonation.Save += SaveForm;
-      oneTimeDonation.Reset += ClearForm;
+      oneTimeDonationView.Save += SaveForm;
+      oneTimeDonationView.Reset += ClearForm;
     }
 
     public OneTimePresenter(OneTimeDonation oneTimeDonation, IOneTimeDonationView oneTimeDonationView):this(oneTimeDonation)
@@ -34,7 +34,16 @@ namespace OneTimeControl.Presenter
 
     private void SaveForm(object sender, EventArgs e)
     {
-      MessageBox.Show("Donate button clikced");
+
+      if(oneTimeDonationView != null)
+      {
+        MessageBox.Show("Empty");
+      }
+      else
+      {
+        MessageBox.Show("Not Empty");
+      }
+      
     }
   }
 }
