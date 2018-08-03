@@ -41,7 +41,6 @@ namespace OneTimeControl
             this.lblCreditCardHeader = new Telerik.WinControls.UI.RadLabel();
             this.lblCardNumber = new Telerik.WinControls.UI.RadLabel();
             this.tbCardNumber = new Telerik.WinControls.UI.RadTextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblCardHolderName = new Telerik.WinControls.UI.RadLabel();
             this.tbCardHolderName = new Telerik.WinControls.UI.RadTextBox();
             this.lblExpiryDate = new Telerik.WinControls.UI.RadLabel();
@@ -84,7 +83,6 @@ namespace OneTimeControl
             this.tbPhone = new Telerik.WinControls.UI.RadTextBox();
             this.picBoxCardLogo = new System.Windows.Forms.PictureBox();
             this.errorProviderMain = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ddlCountry = new Telerik.WinControls.UI.RadDropDownList();
             this.ddlMM = new Telerik.WinControls.UI.RadDropDownList();
             this.ddlProvince = new Telerik.WinControls.UI.RadDropDownList();
@@ -136,7 +134,6 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.tbPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).BeginInit();
@@ -206,12 +203,6 @@ namespace OneTimeControl
             this.tbCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCardNumber_KeyPress);
             this.tbCardNumber.Leave += new System.EventHandler(this.tbCardNumber_Leave);
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // lblCardHolderName
             // 
             this.lblCardHolderName.Font = new System.Drawing.Font("Verdana", 9F);
@@ -246,6 +237,7 @@ namespace OneTimeControl
             // 
             this.ddlFormAnswer.Location = new System.Drawing.Point(41, 1084);
             this.ddlFormAnswer.Name = "ddlFormAnswer";
+            this.ddlFormAnswer.ReadOnly = true;
             this.ddlFormAnswer.Size = new System.Drawing.Size(435, 24);
             this.ddlFormAnswer.TabIndex = 18;
             this.ddlFormAnswer.Text = "radDropDownList1";
@@ -541,6 +533,7 @@ namespace OneTimeControl
             // 
             this.ddlYYYY.Location = new System.Drawing.Point(111, 388);
             this.ddlYYYY.Name = "ddlYYYY";
+            this.ddlYYYY.ReadOnly = true;
             this.ddlYYYY.Size = new System.Drawing.Size(124, 24);
             this.ddlYYYY.TabIndex = 5;
             this.ddlYYYY.Text = "radDropDownList2";
@@ -549,7 +542,7 @@ namespace OneTimeControl
             // picBoxLogo
             // 
             this.picBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogo.Image")));
-            this.picBoxLogo.Location = new System.Drawing.Point(243, 4);
+            this.picBoxLogo.Location = new System.Drawing.Point(281, 0);
             this.picBoxLogo.Name = "picBoxLogo";
             this.picBoxLogo.Size = new System.Drawing.Size(201, 143);
             this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -606,14 +599,11 @@ namespace OneTimeControl
             // 
             this.errorProviderMain.ContainerControl = this;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // ddlCountry
             // 
             this.ddlCountry.Location = new System.Drawing.Point(15, 915);
             this.ddlCountry.Name = "ddlCountry";
+            this.ddlCountry.ReadOnly = true;
             this.ddlCountry.Size = new System.Drawing.Size(205, 24);
             this.ddlCountry.TabIndex = 16;
             this.ddlCountry.Text = "radDropDownList2";
@@ -623,6 +613,7 @@ namespace OneTimeControl
             // 
             this.ddlMM.Location = new System.Drawing.Point(12, 388);
             this.ddlMM.Name = "ddlMM";
+            this.ddlMM.ReadOnly = true;
             this.ddlMM.Size = new System.Drawing.Size(88, 24);
             this.ddlMM.TabIndex = 4;
             this.ddlMM.Text = "radDropDownList2";
@@ -742,7 +733,6 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.tbPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).EndInit();
@@ -763,7 +753,6 @@ namespace OneTimeControl
     private Telerik.WinControls.UI.RadLabel lblCreditCardHeader;
     private Telerik.WinControls.UI.RadLabel lblCardNumber;
     private Telerik.WinControls.UI.RadTextBox tbCardNumber;
-    private System.Windows.Forms.ImageList imageList1;
     private Telerik.WinControls.UI.RadLabel lblCardHolderName;
     private Telerik.WinControls.UI.RadTextBox tbCardHolderName;
     private Telerik.WinControls.UI.RadLabel lblExpiryDate;
@@ -806,7 +795,6 @@ namespace OneTimeControl
     private Telerik.WinControls.UI.RadTextBox tbPhone;
     private System.Windows.Forms.PictureBox picBoxCardLogo;
     private System.Windows.Forms.ErrorProvider errorProviderMain;
-    private System.Windows.Forms.ErrorProvider errorProvider1;
     private Telerik.WinControls.UI.RadDropDownList ddlProvince;
     private Telerik.WinControls.UI.RadDropDownList ddlMM;
     private Telerik.WinControls.UI.RadDropDownList ddlCountry;
