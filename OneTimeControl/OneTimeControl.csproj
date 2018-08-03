@@ -97,5 +97,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\icAmex.png" />
+    <Content Include="Images\icMasterCard.png" />
+    <Content Include="Images\icVisa.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

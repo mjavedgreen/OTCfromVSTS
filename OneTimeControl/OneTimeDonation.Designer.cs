@@ -35,7 +35,7 @@
             this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.office2010BlueTheme1 = new Telerik.WinControls.Themes.Office2010BlueTheme();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
+            this.tbAmount = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -85,9 +85,10 @@
             this.radTextBox6 = new Telerik.WinControls.UI.RadTextBox();
             this.radTextBox7 = new Telerik.WinControls.UI.RadTextBox();
             this.radTextBox8 = new Telerik.WinControls.UI.RadTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
@@ -134,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
@@ -157,15 +159,15 @@
             this.radLabel2.Text = "Amount";
             this.radLabel2.ThemeName = "Aqua";
             // 
-            // radTextBox1
+            // tbAmount
             // 
-            this.radTextBox1.Location = new System.Drawing.Point(102, 165);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.NullText = "00.00";
-            this.radTextBox1.ShowNullText = true;
-            this.radTextBox1.Size = new System.Drawing.Size(248, 24);
-            this.radTextBox1.TabIndex = 0;
-            this.radTextBox1.ThemeName = "VisualStudio2012Light";
+            this.tbAmount.Location = new System.Drawing.Point(102, 165);
+            this.tbAmount.Name = "tbAmount";
+            this.tbAmount.NullText = "00.00";
+            this.tbAmount.ShowNullText = true;
+            this.tbAmount.Size = new System.Drawing.Size(248, 24);
+            this.tbAmount.TabIndex = 0;
+            this.tbAmount.ThemeName = "VisualStudio2012Light";
             // 
             // radLabel3
             // 
@@ -592,10 +594,19 @@
             this.radTextBox8.TabIndex = 6;
             this.radTextBox8.ThemeName = "VisualStudio2012Light";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(372, 271);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(72, 33);
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
             // OneTimeDonation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.radTextBox8);
             this.Controls.Add(this.radTextBox7);
             this.Controls.Add(this.radTextBox6);
@@ -642,15 +653,15 @@
             this.Controls.Add(this.radTextBox2);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel3);
-            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
             this.Name = "OneTimeDonation";
-            this.Size = new System.Drawing.Size(604, 1464);
+            this.Size = new System.Drawing.Size(549, 1464);
             this.Load += new System.EventHandler(this.OneTimeDonation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
@@ -697,6 +708,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -708,7 +720,7 @@
     private Telerik.WinControls.Themes.AquaTheme aquaTheme1;
     private Telerik.WinControls.UI.RadLabel radLabel2;
     private Telerik.WinControls.Themes.Office2010BlueTheme office2010BlueTheme1;
-    private Telerik.WinControls.UI.RadTextBox radTextBox1;
+    private Telerik.WinControls.UI.RadTextBox tbAmount;
     private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     private Telerik.WinControls.UI.RadLabel radLabel3;
@@ -758,5 +770,6 @@
     private Telerik.WinControls.UI.RadTextBox radTextBox6;
     private Telerik.WinControls.UI.RadTextBox radTextBox7;
     private Telerik.WinControls.UI.RadTextBox radTextBox8;
+    private System.Windows.Forms.PictureBox pictureBox2;
   }
 }
