@@ -141,11 +141,11 @@ namespace OneTimeControl
             // 
             // lblDonateionHeader
             // 
-            this.lblDonateionHeader.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lblDonateionHeader.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.lblDonateionHeader.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblDonateionHeader.Location = new System.Drawing.Point(68, 122);
             this.lblDonateionHeader.Name = "lblDonateionHeader";
-            this.lblDonateionHeader.Size = new System.Drawing.Size(181, 25);
+            this.lblDonateionHeader.Size = new System.Drawing.Size(200, 25);
             this.lblDonateionHeader.TabIndex = 1;
             this.lblDonateionHeader.Text = "One Time Donation";
             this.lblDonateionHeader.ThemeName = "Aqua";
@@ -174,11 +174,11 @@ namespace OneTimeControl
             // 
             // lblCreditCardHeader
             // 
-            this.lblCreditCardHeader.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lblCreditCardHeader.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.lblCreditCardHeader.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblCreditCardHeader.Location = new System.Drawing.Point(68, 209);
             this.lblCreditCardHeader.Name = "lblCreditCardHeader";
-            this.lblCreditCardHeader.Size = new System.Drawing.Size(216, 25);
+            this.lblCreditCardHeader.Size = new System.Drawing.Size(243, 25);
             this.lblCreditCardHeader.TabIndex = 3;
             this.lblCreditCardHeader.Text = "Credit Card/VISA Debit";
             this.lblCreditCardHeader.ThemeName = "Aqua";
@@ -265,11 +265,11 @@ namespace OneTimeControl
             // 
             // lblContactInfoHeader
             // 
-            this.lblContactInfoHeader.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lblContactInfoHeader.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.lblContactInfoHeader.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblContactInfoHeader.Location = new System.Drawing.Point(68, 492);
             this.lblContactInfoHeader.Name = "lblContactInfoHeader";
-            this.lblContactInfoHeader.Size = new System.Drawing.Size(189, 25);
+            this.lblContactInfoHeader.Size = new System.Drawing.Size(212, 25);
             this.lblContactInfoHeader.TabIndex = 4;
             this.lblContactInfoHeader.Text = "Contact Information";
             this.lblContactInfoHeader.ThemeName = "Aqua";
@@ -337,11 +337,11 @@ namespace OneTimeControl
             // 
             // lblBillingInformationHeader
             // 
-            this.lblBillingInformationHeader.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lblBillingInformationHeader.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.lblBillingInformationHeader.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblBillingInformationHeader.Location = new System.Drawing.Point(74, 733);
             this.lblBillingInformationHeader.Name = "lblBillingInformationHeader";
-            this.lblBillingInformationHeader.Size = new System.Drawing.Size(175, 25);
+            this.lblBillingInformationHeader.Size = new System.Drawing.Size(199, 25);
             this.lblBillingInformationHeader.TabIndex = 5;
             this.lblBillingInformationHeader.Text = "Billing Information";
             this.lblBillingInformationHeader.ThemeName = "Aqua";
@@ -443,11 +443,11 @@ namespace OneTimeControl
             // 
             // lblDonationInformationHeader
             // 
-            this.lblDonationInformationHeader.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lblDonationInformationHeader.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.lblDonationInformationHeader.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblDonationInformationHeader.Location = new System.Drawing.Point(128, 984);
+            this.lblDonationInformationHeader.Location = new System.Drawing.Point(74, 979);
             this.lblDonationInformationHeader.Name = "lblDonationInformationHeader";
-            this.lblDonationInformationHeader.Size = new System.Drawing.Size(201, 25);
+            this.lblDonationInformationHeader.Size = new System.Drawing.Size(226, 25);
             this.lblDonationInformationHeader.TabIndex = 6;
             this.lblDonationInformationHeader.Text = "Donation Information";
             this.lblDonationInformationHeader.ThemeName = "Aqua";

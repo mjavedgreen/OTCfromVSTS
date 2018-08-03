@@ -1,3 +1,4 @@
+using OneTimeControl.IView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace OneTimeControl.Presenter
   class OneTimePresenter
   {
     private OneTimeDonation oneTimeDonation;
+    private IOneTimeDonationView oneTimeDonationView;
 
     //Binging Form Events to Presenter
     public OneTimePresenter(OneTimeDonation oneTimeDonation)
@@ -19,9 +21,15 @@ namespace OneTimeControl.Presenter
       oneTimeDonation.Reset += ClearForm;
     }
 
+    public OneTimePresenter(OneTimeDonation oneTimeDonation, IOneTimeDonationView oneTimeDonationView):this(oneTimeDonation)
+    {
+      this.oneTimeDonationView = oneTimeDonationView;
+    }
+
     private void ClearForm(object sender, EventArgs e)
     {
       MessageBox.Show("Reset button clikced");
+     // string abc = oneTimeDonationView.CardNumber;
     }
 
     private void SaveForm(object sender, EventArgs e)

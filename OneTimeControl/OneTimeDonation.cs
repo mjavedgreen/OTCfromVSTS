@@ -42,7 +42,7 @@ namespace OneTimeControl
     public OneTimeDonation()
     {
       InitializeComponent();
-      presenter = new OneTimePresenter(this);
+     // presenter = new OneTimePresenter(this);
     }
 
     public event EventHandler<EventArgs> Save;
@@ -83,7 +83,7 @@ namespace OneTimeControl
       ddlFormAnswer.DisplayMember = "Text";
       ddlFormAnswer.ValueMember = "Value";
 
-
+      presenter = new OneTimePresenter(this, this);
 
     }
 
@@ -168,7 +168,7 @@ namespace OneTimeControl
 
     private void tbCardNumber_Leave(object sender, EventArgs e)
     {
-        if(tbCardNumber.MaxLength != 16)
+        if(tbCardNumber.Text.Length != 16)
       {
         errorProviderMain.SetError(this.tbCardNumber, "Card Number not proper");
       }
@@ -180,7 +180,7 @@ namespace OneTimeControl
 
     private void tbSecCodeCVV_Leave(object sender, EventArgs e)
     {
-        if(tbSecCodeCVV.MaxLength != 3)
+        if(tbSecCodeCVV.Text.Length != 3)
       {
         errorProviderMain.SetError(this.tbSecCodeCVV, "Security Code Incomplete");
       }
