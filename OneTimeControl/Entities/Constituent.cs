@@ -92,4 +92,12 @@ namespace OneTimeControl.Entities
     public virtual string Status { get; set; }
     public virtual string FriendlyErrorMessage { get; set; }
   }
+
+
+  public class PaymentResult
+  {
+    public bool Success { get; set; }
+    public string ExternalPaymentID { get; set; }
+    public string ErrorMessage { get; set; }
+  }
 }
