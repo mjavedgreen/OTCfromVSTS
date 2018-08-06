@@ -168,7 +168,7 @@ namespace OneTimeControl.Presenter
       //throw new NotImplementedException();
       var donation = new Donation
       {
-        Amount = 5.00M, //Convert.ToDecimal(oneTimeDonationView.DonationAmount),
+        Amount = Convert.ToDecimal(oneTimeDonationView.DonationAmount),
         CurrencyID = "CAD",
         DonorConstituentID = conResp,
         EventID = "26922",//"2034",//"185644-finone",  //Default event in the Gateway
