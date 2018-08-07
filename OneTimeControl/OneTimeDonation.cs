@@ -149,7 +149,7 @@ namespace OneTimeControl
       string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
       if (Regex.IsMatch(tbEmail.Text, pattern))
       {
-        errorProviderMain.Clear();
+        errorProviderMain.SetError(this.tbEmail,"");
       }
       else
       {
@@ -174,14 +174,14 @@ namespace OneTimeControl
     }
 
     private void tbCardNumber_Leave(object sender, EventArgs e)
-    {
-        if(tbCardNumber.Text.Length != 16)
+            {
+        if(tbCardNumber.Text.Length.ToString() != "16")
       {
         errorProviderMain.SetError(this.tbCardNumber, "Card Number not proper");
       }
       else
       {
-        errorProviderMain.Clear();
+        errorProviderMain.SetError(this.tbCardNumber, "");
       }
     }
 
@@ -191,7 +191,7 @@ namespace OneTimeControl
       {
         errorProviderMain.SetError(this.tbSecCodeCVV, "Security Code Incomplete");
       }
-    //  else { errorProviderMain.Clear(); }
+     else { errorProviderMain.SetError(this.tbSecCodeCVV, ""); }
     }
 
 
