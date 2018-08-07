@@ -27,7 +27,7 @@ namespace OneTimeControl
     public string CardNumber { get { return tbCardNumber.Text.Trim(); } set { tbCardNumber.Text = value; } }
     public string CarHolderName { get { return tbCardHolderName.Text; } set { tbCardHolderName.Text = value; } }
     public string ExpiryMonth { get { return ddlMM.SelectedItem.Text.ToString(); } set { ddlMM.Text = value; }  }
-    public string ExpiryYear { get { return ddlYYYY.SelectedIndex.ToString(); } set { ddlYYYY.Text = value; } } 
+    public string ExpiryYear { get { return ddlYYYY.SelectedItem.Text.ToString(); } set { ddlYYYY.Text = value; } } 
     public string SecurityCode { get { return tbSecCodeCVV.Text.Trim(); }  set { tbSecCodeCVV.Text = value; }  }
     public string FirstName { get { return tbFirstName.Text; } set { tbFirstName.Text = value; } }
     public string LastName { get { return tbLastName.Text; } set { tbLastName.Text = value; } }
@@ -43,6 +43,8 @@ namespace OneTimeControl
 
     public string DonationReason { get { return ddlFormAnswer.SelectedIndex.ToString(); } set { } }
     public string Comments { get { return tbComments.Text.ToString(); } set { tbComments.Text = value; } }
+
+    public string CardType { get { return lblCardType.Text.ToString(); } set { lblCardType.Text = value; } }
     #endregion
     public OneTimeDonation()
     {
@@ -100,9 +102,9 @@ namespace OneTimeControl
       {
         switch (e.KeyChar)
         {
-          case '3': CreditCradLogoChanger(sender, e, @"C:\Users\md javed\source\repos\OneTimeControl\OneTimeControl\Images\icAmex.png", 4); break;
-          case '4': CreditCradLogoChanger(sender, e, @"C:\Users\md javed\source\repos\OneTimeControl\OneTimeControl\Images\icVisa.png", 3);break;
-          case '5':  CreditCradLogoChanger(sender, e, @"C:\Users\md javed\source\repos\OneTimeControl\OneTimeControl\Images\icMasterCard.png", 3); break;
+          case '3': CreditCradLogoChanger(sender, e, @"C:\Users\md javed\source\repos\OneTimeControl\OneTimeControl\Images\icAmex.png", 4,"AMEX"); break;
+          case '4': CreditCradLogoChanger(sender, e, @"C:\Users\md javed\source\repos\OneTimeControl\OneTimeControl\Images\icVisa.png", 3,"VISA");break;
+          case '5':  CreditCradLogoChanger(sender, e, @"C:\Users\md javed\source\repos\OneTimeControl\OneTimeControl\Images\icMasterCard.png", 3,"MasterCard"); break;
   
         }
       }
@@ -195,11 +197,12 @@ namespace OneTimeControl
 
 
 
-    private void CreditCradLogoChanger(object sender, KeyPressEventArgs e, string logoLocation, int secCodeLenghtSize)
+    private void CreditCradLogoChanger(object sender, KeyPressEventArgs e, string logoLocation, int secCodeLenghtSize, string cardType)
     {
       picBoxCardLogo.Image = null;
       picBoxCardLogo.ImageLocation = logoLocation;
       tbSecCodeCVV.MaxLength = secCodeLenghtSize;
+      lblCardType.Text = cardType;
     }
 
 

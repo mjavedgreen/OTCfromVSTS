@@ -86,6 +86,7 @@ namespace OneTimeControl
             this.ddlCountry = new Telerik.WinControls.UI.RadDropDownList();
             this.ddlMM = new Telerik.WinControls.UI.RadDropDownList();
             this.ddlProvince = new Telerik.WinControls.UI.RadDropDownList();
+            this.lblCardType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lblDonateionHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
@@ -628,10 +629,20 @@ namespace OneTimeControl
             this.ddlProvince.Text = "radDropDownList2";
             this.ddlProvince.ThemeName = "VisualStudio2012Light";
             // 
+            // lblCardType
+            // 
+            this.lblCardType.AutoSize = true;
+            this.lblCardType.Location = new System.Drawing.Point(52, 441);
+            this.lblCardType.Name = "lblCardType";
+            this.lblCardType.Size = new System.Drawing.Size(0, 13);
+            this.lblCardType.TabIndex = 32;
+            this.lblCardType.Visible = false;
+            // 
             // OneTimeDonation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblCardType);
             this.Controls.Add(this.ddlProvince);
             this.Controls.Add(this.ddlMM);
             this.Controls.Add(this.ddlCountry);
@@ -798,5 +809,6 @@ namespace OneTimeControl
     private Telerik.WinControls.UI.RadDropDownList ddlProvince;
     private Telerik.WinControls.UI.RadDropDownList ddlMM;
     private Telerik.WinControls.UI.RadDropDownList ddlCountry;
+    private System.Windows.Forms.Label lblCardType;
   }
 }

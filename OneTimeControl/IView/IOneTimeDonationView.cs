@@ -15,6 +15,7 @@ namespace OneTimeControl.IView
     string ExpiryMonth { get; set; }
     string ExpiryYear { get; set; }
     string SecurityCode { get; set; }
+    string CardType { get; set; }
     string FirstName { get; set; }
     string LastName { get; set; }
     string Email { get; set; }

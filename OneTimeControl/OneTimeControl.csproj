@@ -110,6 +110,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Integration\FrontStream.cs" />
+    <Compile Include="Integration\IFrontstream.cs" />
     <Compile Include="IView\IOneTimeDonationView.cs" />
     <Compile Include="Presenter\OneTimePresenter.cs" />
     <Compile Include="Services\DataServices.cs" />
