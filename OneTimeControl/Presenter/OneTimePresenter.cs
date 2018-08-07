@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using NLog;
 using OneTimeControl.Entities;
 using OneTimeControl.IView;
 using System;
@@ -16,6 +17,7 @@ namespace OneTimeControl.Presenter
   {
    // private OneTimeDonation oneTimeDonation;
     private IOneTimeDonationView oneTimeDonationView;
+    private static Logger logger = LogManager.GetCurrentClassLogger();
 
     //Binging Form Events to Presenter
     
@@ -42,7 +44,7 @@ namespace OneTimeControl.Presenter
 
       //Payment
       MakeDonation();
-      MessageBox.Show("Donation Saved");
+     // MessageBox.Show("Donation Saved");
     //  ClearMainForm();
     }
 
@@ -69,7 +71,9 @@ namespace OneTimeControl.Presenter
       }
       catch(Exception ex)
       {
-
+        logger.Error(ex, "Exception occurred");
+        logger.Error(ex.InnerException);
+        MessageBox.Show("Exception occurred");
       }
     }
 
