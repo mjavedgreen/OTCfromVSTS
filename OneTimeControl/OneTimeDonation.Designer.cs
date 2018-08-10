@@ -35,7 +35,6 @@ namespace OneTimeControl
             this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             this.lblAmount = new Telerik.WinControls.UI.RadLabel();
             this.office2010BlueTheme1 = new Telerik.WinControls.Themes.Office2010BlueTheme();
-            this.tbAmount = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.lblCreditCardHeader = new Telerik.WinControls.UI.RadLabel();
@@ -87,9 +86,9 @@ namespace OneTimeControl
             this.ddlMM = new Telerik.WinControls.UI.RadDropDownList();
             this.ddlProvince = new Telerik.WinControls.UI.RadDropDownList();
             this.lblCardType = new System.Windows.Forms.Label();
+            this.tbAmount = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lblDonateionHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblAmount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCreditCardHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCardNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCardNumber)).BeginInit();
@@ -138,6 +137,7 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDonateionHeader
@@ -160,18 +160,6 @@ namespace OneTimeControl
             this.lblAmount.TabIndex = 2;
             this.lblAmount.Text = "Amount*";
             this.lblAmount.ThemeName = "Aqua";
-            // 
-            // tbAmount
-            // 
-            this.tbAmount.Location = new System.Drawing.Point(102, 167);
-            this.tbAmount.Name = "tbAmount";
-            this.tbAmount.NullText = "00.00";
-            this.tbAmount.ShowNullText = true;
-            this.tbAmount.Size = new System.Drawing.Size(248, 24);
-            this.tbAmount.TabIndex = 1;
-            this.tbAmount.ThemeName = "VisualStudio2012Light";
-            this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
-            this.tbAmount.Leave += new System.EventHandler(this.tbAmount_Leave);
             // 
             // lblCreditCardHeader
             // 
@@ -609,6 +597,7 @@ namespace OneTimeControl
             this.ddlCountry.TabIndex = 16;
             this.ddlCountry.Text = "radDropDownList2";
             this.ddlCountry.ThemeName = "VisualStudio2012Light";
+            this.ddlCountry.SelectedValueChanged += new System.EventHandler(this.ddlCountry_SelectedValueChanged);
             // 
             // ddlMM
             // 
@@ -618,6 +607,7 @@ namespace OneTimeControl
             this.ddlMM.NullText = "MM";
             this.ddlMM.Size = new System.Drawing.Size(88, 24);
             this.ddlMM.TabIndex = 4;
+            this.ddlMM.Text = "MM";
             this.ddlMM.ThemeName = "VisualStudio2012Light";
             // 
             // ddlProvince
@@ -638,10 +628,21 @@ namespace OneTimeControl
             this.lblCardType.TabIndex = 32;
             this.lblCardType.Visible = false;
             // 
+            // tbAmount
+            // 
+            this.tbAmount.Location = new System.Drawing.Point(94, 167);
+            this.tbAmount.Name = "tbAmount";
+            this.tbAmount.NullText = "00.00";
+            this.tbAmount.ShowNullText = true;
+            this.tbAmount.Size = new System.Drawing.Size(256, 24);
+            this.tbAmount.TabIndex = 3;
+            this.tbAmount.ThemeName = "VisualStudio2012Light";
+            // 
             // OneTimeDonation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.lblCardType);
             this.Controls.Add(this.ddlProvince);
             this.Controls.Add(this.ddlMM);
@@ -690,15 +691,15 @@ namespace OneTimeControl
             this.Controls.Add(this.tbCardNumber);
             this.Controls.Add(this.lblCardNumber);
             this.Controls.Add(this.lblCreditCardHeader);
-            this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblDonateionHeader);
             this.Name = "OneTimeDonation";
             this.Size = new System.Drawing.Size(549, 1464);
             this.Load += new System.EventHandler(this.OneTimeDonation_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
+            this.Leave += new System.EventHandler(this.tbAmount_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.lblDonateionHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblAmount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCreditCardHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblCardNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCardNumber)).EndInit();
@@ -747,6 +748,7 @@ namespace OneTimeControl
             ((System.ComponentModel.ISupportInitialize)(this.ddlCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlProvince)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,7 +760,6 @@ namespace OneTimeControl
     private Telerik.WinControls.Themes.AquaTheme aquaTheme1;
     private Telerik.WinControls.UI.RadLabel lblAmount;
     private Telerik.WinControls.Themes.Office2010BlueTheme office2010BlueTheme1;
-    private Telerik.WinControls.UI.RadTextBox tbAmount;
     private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     private Telerik.WinControls.UI.RadLabel lblCreditCardHeader;
@@ -810,5 +811,6 @@ namespace OneTimeControl
     private Telerik.WinControls.UI.RadDropDownList ddlMM;
     private Telerik.WinControls.UI.RadDropDownList ddlCountry;
     private System.Windows.Forms.Label lblCardType;
+    private Telerik.WinControls.UI.RadTextBox tbAmount;
   }
 }

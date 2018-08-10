@@ -27,7 +27,9 @@ namespace OneTimeControl
     public string CardNumber { get { return tbCardNumber.Text.Trim(); } set { tbCardNumber.Text = value; } }
     public string CarHolderName { get { return tbCardHolderName.Text; } set { tbCardHolderName.Text = value; } }
     public string ExpiryMonth { get { return ddlMM.SelectedItem.Text.ToString(); } set { ddlMM.Text = value; }  }
-    public string ExpiryYear { get { return ddlYYYY.SelectedItem.Text.ToString(); } set { ddlYYYY.Text = value; } } 
+   //public string ExpiryMonth { get; set; }
+    public string ExpiryYear { get { return ddlYYYY.SelectedItem.Text.ToString(); } set { ddlYYYY.Text = value; } }
+   // public string ExpiryYear { get; set; }
     public string SecurityCode { get { return tbSecCodeCVV.Text.Trim(); }  set { tbSecCodeCVV.Text = value; }  }
     public string FirstName { get { return tbFirstName.Text; } set { tbFirstName.Text = value; } }
     public string LastName { get { return tbLastName.Text; } set { tbLastName.Text = value; } }
@@ -38,8 +40,11 @@ namespace OneTimeControl
     public string UnitSuit { get { return tbUnitSuite.Text; } set { tbUnitSuite.Text = value; } }
     public string City { get { return tbCity.Text; } set { tbCity.Text = value; } }
     public string PostalCode { get { return tbPostalCode.Text; } set { tbPostalCode.Text = value; } }
-    public string Country {  get { return ddlCountry.SelectedItem.Value.ToString(); } set { ddlCountry.Text = value; } }
+    public string Country { get { return ddlCountry.SelectedItem.Text.ToString(); } set { ddlCountry.Text = value; } }
     public string Province { get { return ddlProvince.SelectedItem.Value.ToString(); } set { ddlProvince.Text = value; } }
+
+    //public string Country { get; set; }
+    //public string Province { get; set; }
 
     public string DonationReason { get { return ddlFormAnswer.SelectedIndex.ToString(); } set { } }
     public string Comments { get { return tbComments.Text.ToString(); } set { tbComments.Text = value; } }
@@ -49,8 +54,35 @@ namespace OneTimeControl
     public OneTimeDonation()
     {
       InitializeComponent();
-     // presenter = new OneTimePresenter(this);
+      dataService = new DataServices(this);
+      ddlMM.DataSource = dataService.GetExpiryMonths();
+      ddlMM.DisplayMember = "Text";
+      ddlMM.ValueMember = "Value";
+      ddlMM.SelectedIndex = 0;
+
+      ddlYYYY.DataSource = dataService.GetExpiryYears();
+      ddlYYYY.DisplayMember = "Text";
+      ddlYYYY.ValueMember = "Value";
+      ddlYYYY.SelectedIndex = 0;
+
+      ddlCountry.DataSource = dataService.GetCountries();
+      ddlCountry.DisplayMember = "Text";
+      ddlCountry.ValueMember = "Value";
+ //     ddlCountry.SelectedIndex = 0;
+
+      ddlProvince.DataSource = dataService.GetCanadianProvinces();
+      ddlProvince.DisplayMember = "Text";
+      ddlProvince.ValueMember = "Value";
+ //     ddlProvince.SelectedIndex = 0;
+
+      ddlFormAnswer.DataSource = dataService.GetWhatLedYouToDonateItems();
+      ddlFormAnswer.DisplayMember = "Text";
+      ddlFormAnswer.ValueMember = "Value";
+ //     ddlFormAnswer.SelectedIndex = 0;
+      // presenter = new OneTimePresenter(this);
     }
+
+
 
     public event EventHandler<EventArgs> Save;
     public event EventHandler<EventArgs> Reset;
@@ -68,30 +100,7 @@ namespace OneTimeControl
 
     private void OneTimeDonation_Load(object sender, EventArgs e)
     {
-      tbAmount.Focus();
-      dataService = new DataServices(this);
-      ddlMM.DataSource = dataService.GetExpiryMonths();
-      ddlMM.DisplayMember = "Text";
-      ddlMM.ValueMember = "Value";
-
-      ddlYYYY.DataSource = dataService.GetExpiryYears();
-      ddlYYYY.DisplayMember = "Text";
-      ddlYYYY.ValueMember = "Value";
-
-      ddlCountry.DataSource = dataService.GetCountries();
-      ddlCountry.DisplayMember = "Text";
-      ddlCountry.ValueMember = "Value";
-
-      ddlProvince.DataSource = dataService.GetCanadianProvinces();
-      ddlProvince.DisplayMember = "Text";
-      ddlProvince.ValueMember = "Value";
-
-      ddlFormAnswer.DataSource = dataService.GetWhatLedYouToDonateItems();
-      ddlFormAnswer.DisplayMember = "Text";
-      ddlFormAnswer.ValueMember = "Value";
-
       presenter = new OneTimePresenter(this);
-
     }
 
    
@@ -225,7 +234,18 @@ namespace OneTimeControl
 
     private void btnDonate_Click(object sender, EventArgs e)
     {
-      Save(sender, e);
+      //check for validation here
+      bool valStatus = CompleteValidation();
+      if (valStatus)
+      {
+        Save(sender, e);
+      }
+      else
+      {
+        MessageBox.Show("Please complete the form");
+      }
+
+      //  Save(sender, e);
     }
 
     private void btnReset_Click(object sender, EventArgs e)
@@ -244,7 +264,13 @@ namespace OneTimeControl
       {
         errorProviderMain.SetError(textBox, controlName + " cannot be empty");
       }
+      else
+      {
+        errorProviderMain.SetError(textBox, "");
+      }
     }
+
+
 
     private void tbLastName_Leave(object sender, EventArgs e)
     {
@@ -273,11 +299,78 @@ namespace OneTimeControl
 
     private void tbAmount_Leave(object sender, EventArgs e)
     {
-      //CheckIfEmpty(tbAmount, "Amount");
+      CheckIfEmpty(tbAmount, "Amount");
     }
+
 
     #endregion
 
-  
+    private void ddlCountry_SelectedValueChanged(object sender, EventArgs e)
+    {
+      if(ddlCountry.SelectedValue.ToString() == "US")
+      {
+        ddlProvince.DataSource = dataService.GetAmericanStates();
+        ddlProvince.DisplayMember = "Text";
+        ddlProvince.ValueMember = "Value";
+      }
+      else if(ddlCountry.SelectedValue.ToString() == "AU")
+      {
+        ddlProvince.DataSource = dataService.GetAustralianStates();
+        ddlProvince.DisplayMember = "Text";
+        ddlProvince.ValueMember = "Value";
+      }
+      else
+      {
+        ddlProvince.DataSource = dataService.GetCanadianProvinces();
+        ddlProvince.DisplayMember = "Text";
+        ddlProvince.ValueMember = "Value";
+
+      }
+    }
+
+
+    #region Final Validation
+    private bool CompleteValidation()
+    {
+      if(tbAmount.Text == "")
+      {
+        MessageBox.Show("Please enter Amount");
+        return false;
+      } else if (tbCardNumber.Text == "")
+      {
+        MessageBox.Show("Please enter Credit Card details"); return false;
+      } else if (tbCardHolderName.Text == "")
+      {
+        MessageBox.Show("Please enter Card Holder Name"); return false;
+      }
+      else if (tbSecCodeCVV.Text == "")
+      {
+        MessageBox.Show("Please enter Security Code"); return false;
+      } else if (tbFirstName.Text == "")
+      {
+        MessageBox.Show("Please enter First Name"); return false;
+      } else if (tbLastName.Text == "")
+      {
+        MessageBox.Show("Please enter Last Name"); return false;
+      } else if (tbEmail.Text == "")
+      {
+        MessageBox.Show("Please enter Email"); return false;
+      } else if (tbAddress.Text == "")
+      {
+        MessageBox.Show("Please enter Address"); return false;
+      }
+
+
+      return true;
+
+
+
+
+
+
+
+    }
+
+    #endregion  
   }
 }

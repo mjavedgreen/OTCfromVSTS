@@ -39,7 +39,7 @@
             this.oneTimeDonation1.CarHolderName = "";
             this.oneTimeDonation1.City = "";
             this.oneTimeDonation1.Comments = "";
-            this.oneTimeDonation1.Country = "CA";
+            this.oneTimeDonation1.Country = "Canada";
             this.oneTimeDonation1.DonationAmount = "";
             this.oneTimeDonation1.DonationReason = "0";
             this.oneTimeDonation1.Email = "";
@@ -48,7 +48,7 @@
             this.oneTimeDonation1.Extension = "";
             this.oneTimeDonation1.FirstName = "";
             this.oneTimeDonation1.LastName = "";
-            this.oneTimeDonation1.Location = new System.Drawing.Point(1, 12);
+            this.oneTimeDonation1.Location = new System.Drawing.Point(94, 28);
             this.oneTimeDonation1.Name = "oneTimeDonation1";
             this.oneTimeDonation1.PhoneNumber = "";
             this.oneTimeDonation1.PostalCode = "";
@@ -60,9 +60,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(579, 694);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.oneTimeDonation1);
             this.Name = "Form1";
             this.Text = "Form1";
