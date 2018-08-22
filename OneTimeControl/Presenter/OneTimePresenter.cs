@@ -147,7 +147,7 @@ namespace OneTimeControl.Presenter
       cons.DefaultRequestHeaders.Accept.Clear();
       cons.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
       cons.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", GetEncodedAuthorization());
-      //HttpResponseMessage res = cons.PostAsync("https://secureuat.artezhq.com/api/Constituents", jSonReqConstituent).Result;
+      //HttpResponseMessage res = cons.PostAsync("https://secureuat.artezhq.com/api/Constituents", jSonReqConstituent).Result; UAT env
       HttpResponseMessage res = cons.PostAsync("https://secure.e2rm.com/api/Constituents", jSonReqConstituent).Result;
       var constituentResponse = res.Content.ReadAsAsync<ConstituentResponse>();
       var transaction = new Transaction { ConstituentID = constituentResponse.Result.ConstituentID };

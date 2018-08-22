@@ -135,6 +135,11 @@
     <Compile Include="Integration\IFrontstream.cs" />
     <Compile Include="IView\IOneTimeDonationView.cs" />
     <Compile Include="Presenter\OneTimePresenter.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\DataServices.cs" />
     <Compile Include="Services\IDataService.cs" />
     <Compile Include="OneTimeDonation.cs">
@@ -165,6 +170,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
