@@ -234,7 +234,7 @@ namespace OneTimeControl
 
     private void btnDonate_Click(object sender, EventArgs e)
     {
-      //check for validation here
+      //check for entire validation here
       bool valStatus = CompleteValidation();
       if (valStatus)
       {
@@ -301,7 +301,12 @@ namespace OneTimeControl
     {
       CheckIfEmpty(tbAmount, "Amount");
     }
-
+    //Dropdown Validations 
+    private void ddlMM_Leave(object sender, EventArgs e)
+    {
+     
+      DropDownValidation(ddlMM);
+    }
 
     #endregion
 
@@ -371,6 +376,33 @@ namespace OneTimeControl
 
     }
 
-    #endregion  
+    #endregion
+    private void DropDownValidation(RadDropDownList radDropDownList)
+    {
+      if(radDropDownList.SelectedIndex < 1)
+      {
+        errorProviderMain.SetError(radDropDownList, "PLease select an option");
+      }
+      else
+      {
+        errorProviderMain.SetError(radDropDownList, "");
+      }
+
+    }
+
+    private void ddlYYYY_Leave(object sender, EventArgs e)
+    {
+      DropDownValidation(ddlYYYY);
+    }
+
+    private void ddlCountry_Leave(object sender, EventArgs e)
+    {
+      DropDownValidation(ddlCountry);
+    }
+
+    private void ddlProvince_Leave(object sender, EventArgs e)
+    {
+      DropDownValidation(ddlProvince);
+    }
   }
 }

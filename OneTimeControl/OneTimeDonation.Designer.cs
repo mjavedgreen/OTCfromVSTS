@@ -527,6 +527,7 @@ namespace OneTimeControl
             this.ddlYYYY.TabIndex = 5;
             this.ddlYYYY.Text = "radDropDownList2";
             this.ddlYYYY.ThemeName = "VisualStudio2012Light";
+            this.ddlYYYY.Leave += new System.EventHandler(this.ddlYYYY_Leave);
             // 
             // picBoxLogo
             // 
@@ -598,6 +599,7 @@ namespace OneTimeControl
             this.ddlCountry.Text = "radDropDownList2";
             this.ddlCountry.ThemeName = "VisualStudio2012Light";
             this.ddlCountry.SelectedValueChanged += new System.EventHandler(this.ddlCountry_SelectedValueChanged);
+            this.ddlCountry.Leave += new System.EventHandler(this.ddlCountry_Leave);
             // 
             // ddlMM
             // 
@@ -609,6 +611,7 @@ namespace OneTimeControl
             this.ddlMM.TabIndex = 4;
             this.ddlMM.Text = "MM";
             this.ddlMM.ThemeName = "VisualStudio2012Light";
+            this.ddlMM.Leave += new System.EventHandler(this.ddlMM_Leave);
             // 
             // ddlProvince
             // 
@@ -618,6 +621,7 @@ namespace OneTimeControl
             this.ddlProvince.TabIndex = 17;
             this.ddlProvince.Text = "radDropDownList2";
             this.ddlProvince.ThemeName = "VisualStudio2012Light";
+            this.ddlProvince.Leave += new System.EventHandler(this.ddlProvince_Leave);
             // 
             // lblCardType
             // 
